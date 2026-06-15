@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3分鐘測出你適合什麼工程師</title>
+
+<style>
+body{
+    font-family:Arial;
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+.question{
+    margin-bottom:25px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+}
+
+#result{
+    margin-top:30px;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔧 3分鐘測出你適合什麼工程師</h1>
+
+<div class="question">
+<p>1. 你最喜歡哪件事？</p>
+
+<label><input type="radio" name="q1" value="QE">分析數據</label><br>
+<label><input type="radio" name="q1" value="PE">改善流程</label><br>
+<label><input type="radio" name="q1" value="RD">發明新東西</label><br>
+<label><input type="radio" name="q1" value="EE">修理設備</label>
+</div>
+
+<div class="question">
+<p>2. 發現產品異常時，你會？</p>
+
+<label><input type="radio" name="q2" value="QE">找根本原因</label><br>
+<label><input type="radio" name="q2" value="PE">改善製程</label><br>
+<label><input type="radio" name="q2" value="RD">重新設計</label><br>
+<label><input type="radio" name="q2" value="EE">檢查機台</label>
+</div>
+
+<div class="question">
+<p>3. 你比較有興趣？</p>
+
+<label><input type="radio" name="q3" value="QE">SPC與品質管理</label><br>
+<label><input type="radio" name="q3" value="PE">產線優化</label><br>
+<label><input type="radio" name="q3" value="RD">產品開發</label><br>
+<label><input type="radio" name="q3" value="EE">設備維護</label>
+</div>
+
+<button onclick="showResult()">查看結果</button>
+
+<div id="result"></div>
+
+<script>
+
+function showResult(){
+
+let score = {
+QE:0,
+PE:0,
+RD:0,
+EE:0
+};
+
+for(let i=1;i<=3;i++){
+
+let ans=document.querySelector(
+'input[name="q'+i+'"]:checked'
+);
+
+if(ans){
+score[ans.value]++;
+}
+}
+
+let result=Object.keys(score)
+.reduce((a,b)=>score[a]>score[b]?a:b);
+
+let text="";
+
+if(result==="QE"){
+text="📊 品質工程師(QE)型：你喜歡分析問題、找出根因、使用 SPC、CPK、Pareto 等工具。";
+}
+
+if(result==="PE"){
+text="🏭 製程工程師(PE)型：你擅長改善流程、降低不良率、提升效率。";
+}
+
+if(result==="RD"){
+text="🚀 研發工程師(RD)型：你喜歡創新與產品開發。";
+}
+
+if(result==="EE"){
+text="⚙️ 設備工程師(EE)型：你對機台設備與故障排除有興趣。";
+}
+
+document.getElementById("result").innerHTML=text;
+}
+
+</script>
+
+</body>
+</html>
