@@ -32,6 +32,14 @@ a{display:inline-block;margin-top:15px;padding:10px 15px;background:#2a5298;colo
 </div>
 
 <div class="box">
+<h2>📌 常見搜尋問題</h2>
+<p>我適合什麼工作？</p>
+<p>工程師適合哪一種？</p>
+<p>QE PE RD EE 差在哪？</p>
+<p>職涯方向怎麼選？</p>
+</div>
+
+<div class="box">
 <h2>🧠 四種工程師類型</h2>
 <ul>
 <li>QE：分析數據、找問題原因</li>
@@ -53,6 +61,13 @@ a{display:inline-block;margin-top:15px;padding:10px 15px;background:#2a5298;colo
 <div class="box">
 <h2>🚀 建議</h2>
 <p>如果不確定方向，可以先做測驗再判斷適合職業。</p>
+</div>
+
+<div class="box">
+<h2>🚀 開始測驗</h2>
+<a href="index.html">👉 開始工程師性向測驗</a>
+<a href="engineer-types.html">👉 工程師類型說明</a>
+<a href="engineer-salary-comparison.html">👉 工程師薪資比較</a>
 </div>
 
 <a href="index.html">← 回測驗</a>
