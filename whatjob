@@ -9,17 +9,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{font-family:Arial;max-width:900px;margin:auto;padding:20px;background:#f5f7fa;line-height:1.7;}
-.header{background:linear-gradient(135deg,#2a5298,#1e3c72);color:white;padding:30px;border-radius:12px;text-align:center;}
-.box{background:white;padding:20px;margin-top:20px;border-radius:12px;}
-a{display:inline-block;margin-top:15px;padding:10px 15px;background:#2a5298;color:white;border-radius:8px;text-decoration:none;}
+body{
+  font-family:Arial;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+  background:#f5f7fa;
+  line-height:1.7;
+}
+
+.header{
+  background:linear-gradient(135deg,#2a5298,#1e3c72);
+  color:white;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.box{
+  background:white;
+  padding:20px;
+  margin-top:20px;
+  border-radius:12px;
+}
+
+a{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 15px;
+  background:#2a5298;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+}
 </style>
 </head>
 
 <body>
 
 <div class="header">
-<h1>我適合什麼工作？工程師性向測驗（QE / PE / RD / EE 職涯分析）</h1>
+<h1>我適合什麼工作？工程師性向測驗（QE / PE / RD / EE）</h1>
 <p>工程師性向測驗分析（QE / PE / RD / EE）</p>
 </div>
 
@@ -61,6 +90,19 @@ a{display:inline-block;margin-top:15px;padding:10px 15px;background:#2a5298;colo
 <div class="box">
 <h2>🚀 建議</h2>
 <p>如果不確定方向，可以先做測驗再判斷適合職業。</p>
+</div>
+
+<div class="box">
+<h2>❓ 常見問題（FAQ）</h2>
+
+<h3>我適合什麼工作？</h3>
+<p>透過工程師性向測驗可以分析職涯方向。</p>
+
+<h3>工程師 QE PE RD EE 差在哪？</h3>
+<p>分別代表品質、製程、研發與設備工程師。</p>
+
+<h3>學生適合做這個測驗嗎？</h3>
+<p>適合，可以用來選科系或職涯方向。</p>
 </div>
 
 <div class="box">
