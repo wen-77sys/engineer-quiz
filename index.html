@@ -83,28 +83,28 @@ a:hover{background:#1e3c72;}
 
 <script>
 
-// ===== 20題 =====
+// ===== 有邏輯的20題 =====
 const questions = [
-"你比較喜歡分析問題？",
-"你遇到錯誤會怎麼做？",
-"你偏好什麼工作？",
-"你喜歡什麼環境？",
-"壓力來時你會？",
-"你最重視什麼？",
-"你喜歡做什麼？",
-"同事有問題你會？",
-"成就感來自？",
-"未來想做什麼？",
-"你做事方式？",
-"解決問題方法？",
-"你偏好？",
-"你擅長？",
-"你喜歡？",
-"錯誤發生時？",
-"你比較像？",
-"工作期待？",
-"能力偏向？",
-"理想角色？"
+"看到產品有問題，你第一反應是？",
+"你比較喜歡哪種工作內容？",
+"遇到錯誤時你會？",
+"你偏好哪種環境？",
+"你最有成就感的是？",
+"你喜歡處理？",
+"你比較像哪種人？",
+"同事找你幫忙時你會？",
+"你學習新東西時偏好？",
+"你理想工作是？",
+"你看到機台異常會？",
+"你做事習慣是？",
+"你喜歡的任務？",
+"你對錯誤的態度？",
+"你比較擅長？",
+"你喜歡解決？",
+"你偏好的工作節奏？",
+"你覺得自己是？",
+"你遇到壓力會？",
+"你想要的職涯？"
 ];
 
 let html="";
@@ -114,10 +114,10 @@ html+=`
 <div class="question">
 <p>${i+1}. ${questions[i]}</p>
 
-<label><input type="radio" name="q${i+1}" value="QE">分析 / 數據</label><br>
-<label><input type="radio" name="q${i+1}" value="PE">流程改善</label><br>
-<label><input type="radio" name="q${i+1}" value="RD">創新設計</label><br>
-<label><input type="radio" name="q${i+1}" value="EE">動手實作</label>
+<label><input type="radio" name="q${i+1}" value="QE">找原因 / 分析問題</label><br>
+<label><input type="radio" name="q${i+1}" value="PE">改善流程 / 提升效率</label><br>
+<label><input type="radio" name="q${i+1}" value="RD">創新設計 / 想新方法</label><br>
+<label><input type="radio" name="q${i+1}" value="EE">動手處理 / 解決現場問題</label>
 </div>
 `;
 }
@@ -136,7 +136,7 @@ if(ans) score[ans.value]++;
 
 let result=Object.keys(score).reduce((a,b)=>score[a]>score[b]?a:b);
 
-// 👉 直接導向結果頁
+// 導向結果頁
 if(result==="QE") location.href="qe.html";
 if(result==="PE") location.href="pe.html";
 if(result==="RD") location.href="rd.html";
@@ -145,6 +145,5 @@ if(result==="EE") location.href="ee.html";
 }
 
 </script>
-
 </body>
 </html>
