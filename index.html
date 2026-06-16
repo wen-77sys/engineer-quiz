@@ -3,62 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>3分鐘測出你適合什麼工程師</title>
+
+<title>免費職涯測驗｜3分鐘測出你適合的工程師類型（QE / PE / RD / EE）</title>
+
+<meta name="description" content="免費職涯心理測驗，3分鐘快速分析你適合的工程師類型（品質工程師QE、製程工程師PE、研發工程師RD、設備工程師EE）。適合學生、求職者與工程師轉職參考。">
+
+<meta name="keywords" content="職涯測驗, 工程師測驗, QE, PE, RD, EE, 工程師人格測驗, 職業測驗, 心理測驗, 製程工程師, 品質工程師">
+
+<meta property="og:title" content="3分鐘測出你適合的工程師類型">
+<meta property="og:description" content="免費職涯測驗：看看你是QE、PE、RD還是EE工程師型人格">
+<meta property="og:type" content="website">
 
 <style>
 body{
-    font-family:Arial;
-    max-width:800px;
-    margin:auto;
-    padding:20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f7f7f7;
+}
+
+h1{
+    text-align:center;
 }
 
 .question{
-    margin-bottom:25px;
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:10px;
 }
 
 button{
-    padding:10px 20px;
+    padding:12px 20px;
     font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
 }
 
 #result{
-    margin-top:30px;
+    margin-top:25px;
     font-size:20px;
     font-weight:bold;
+    background:white;
+    padding:20px;
+    border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🔧 3分鐘測出你適合什麼工程師</h1>
+<h1>🔧 3分鐘測出你適合的工程師類型</h1>
 
 <div class="question">
-<p>1. 你最喜歡哪件事？</p>
-
-<label><input type="radio" name="q1" value="QE">分析數據</label><br>
-<label><input type="radio" name="q1" value="PE">改善流程</label><br>
-<label><input type="radio" name="q1" value="RD">發明新東西</label><br>
-<label><input type="radio" name="q1" value="EE">修理設備</label>
+<p>1. 你比較喜歡的工作方式是？</p>
+<label><input type="radio" name="q1" value="QE">分析數據找問題</label><br>
+<label><input type="radio" name="q1" value="PE">改善流程提升效率</label><br>
+<label><input type="radio" name="q1" value="RD">設計新產品或新想法</label><br>
+<label><input type="radio" name="q1" value="EE">處理機台與設備問題</label>
 </div>
 
 <div class="question">
-<p>2. 發現產品異常時，你會？</p>
-
+<p>2. 發現錯誤時你會？</p>
 <label><input type="radio" name="q2" value="QE">找根本原因</label><br>
-<label><input type="radio" name="q2" value="PE">改善製程</label><br>
+<label><input type="radio" name="q2" value="PE">改善流程</label><br>
 <label><input type="radio" name="q2" value="RD">重新設計</label><br>
-<label><input type="radio" name="q2" value="EE">檢查機台</label>
+<label><input type="radio" name="q2" value="EE">修設備</label>
 </div>
 
 <div class="question">
-<p>3. 你比較有興趣？</p>
+<p>3. 你比較擅長？</p>
+<label><input type="radio" name="q3" value="QE">數據分析</label><br>
+<label><input type="radio" name="q3" value="PE">流程優化</label><br>
+<label><input type="radio" name="q3" value="RD">創意思考</label><br>
+<label><input type="radio" name="q3" value="EE">動手能力</label>
+</div>
 
-<label><input type="radio" name="q3" value="QE">SPC與品質管理</label><br>
-<label><input type="radio" name="q3" value="PE">產線優化</label><br>
-<label><input type="radio" name="q3" value="RD">產品開發</label><br>
-<label><input type="radio" name="q3" value="EE">設備維護</label>
+<div class="question">
+<p>4. 你偏好工作環境？</p>
+<label><input type="radio" name="q4" value="QE">數據明確</label><br>
+<label><input type="radio" name="q4" value="PE">持續改善</label><br>
+<label><input type="radio" name="q4" value="RD">自由創意</label><br>
+<label><input type="radio" name="q4" value="EE">產線/設備</label>
+</div>
+
+<div class="question">
+<p>5. 壓力來時你會？</p>
+<label><input type="radio" name="q5" value="QE">拆解分析</label><br>
+<label><input type="radio" name="q5" value="PE">優化流程</label><br>
+<label><input type="radio" name="q5" value="RD">重新思考</label><br>
+<label><input type="radio" name="q5" value="EE">直接處理</label>
+</div>
+
+<div class="question">
+<p>6. 你最重視？</p>
+<label><input type="radio" name="q6" value="QE">數據正確</label><br>
+<label><input type="radio" name="q6" value="PE">效率</label><br>
+<label><input type="radio" name="q6" value="RD">創新</label><br>
+<label><input type="radio" name="q6" value="EE">穩定性</label>
+</div>
+
+<div class="question">
+<p>7. 你喜歡？</p>
+<label><input type="radio" name="q7" value="QE">檢查報表</label><br>
+<label><input type="radio" name="q7" value="PE">改善流程</label><br>
+<label><input type="radio" name="q7" value="RD">開發產品</label><br>
+<label><input type="radio" name="q7" value="EE">修設備</label>
+</div>
+
+<div class="question">
+<p>8. 同事有問題你會？</p>
+<label><input type="radio" name="q8" value="QE">分析原因</label><br>
+<label><input type="radio" name="q8" value="PE">給改善建議</label><br>
+<label><input type="radio" name="q8" value="RD">給新想法</label><br>
+<label><input type="radio" name="q8" value="EE">直接幫忙修</label>
+</div>
+
+<div class="question">
+<p>9. 成就感來自？</p>
+<label><input type="radio" name="q9" value="QE">找到問題原因</label><br>
+<label><input type="radio" name="q9" value="PE">流程變順</label><br>
+<label><input type="radio" name="q9" value="RD">做出產品</label><br>
+<label><input type="radio" name="q9" value="EE">修好設備</label>
+</div>
+
+<div class="question">
+<p>10. 你希望未來工作？</p>
+<label><input type="radio" name="q10" value="QE">數據分析型</label><br>
+<label><input type="radio" name="q10" value="PE">持續改善</label><br>
+<label><input type="radio" name="q10" value="RD">創新開發</label><br>
+<label><input type="radio" name="q10" value="EE">動手解決問題</label>
 </div>
 
 <button onclick="showResult()">查看結果</button>
@@ -69,43 +144,33 @@ button{
 
 function showResult(){
 
-let score = {
-QE:0,
-PE:0,
-RD:0,
-EE:0
-};
+let score = {QE:0, PE:0, RD:0, EE:0};
 
-for(let i=1;i<=3;i++){
-
-let ans=document.querySelector(
-'input[name="q'+i+'"]:checked'
-);
-
+for(let i=1;i<=10;i++){
+let ans=document.querySelector('input[name="q'+i+'"]:checked');
 if(ans){
 score[ans.value]++;
 }
 }
 
-let result=Object.keys(score)
-.reduce((a,b)=>score[a]>score[b]?a:b);
+let result=Object.keys(score).reduce((a,b)=>score[a]>score[b]?a:b);
 
 let text="";
 
 if(result==="QE"){
-text="📊 品質工程師(QE)型：你喜歡分析問題、找出根因、使用 SPC、CPK、Pareto 等工具。";
+text="📊 你是【品質工程師 QE 型】：擅長數據分析、找問題根因、SPC/CPK/8D 很適合你。";
 }
 
 if(result==="PE"){
-text="🏭 製程工程師(PE)型：你擅長改善流程、降低不良率、提升效率。";
+text="🏭 你是【製程工程師 PE 型】：擅長流程改善、提升效率、降低不良率。";
 }
 
 if(result==="RD"){
-text="🚀 研發工程師(RD)型：你喜歡創新與產品開發。";
+text="🚀 你是【研發工程師 RD 型】：適合創新、產品設計與開發。";
 }
 
 if(result==="EE"){
-text="⚙️ 設備工程師(EE)型：你對機台設備與故障排除有興趣。";
+text="⚙️ 你是【設備工程師 EE 型】：適合機台維修、設備調整與現場問題解決。";
 }
 
 document.getElementById("result").innerHTML=text;
