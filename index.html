@@ -2,30 +2,14 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>工程師職涯測驗｜QE / PE / RD / EE</title>
-
-<meta name="description" content="免費工程師職涯測驗，測出你適合QE、PE、RD、EE工程師類型">
+<title>工程師職涯測驗</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="google-site-verification" content="google85207e0cc7cca3dc" />
 
 <style>
-body{
-    font-family:Arial;
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-    background:#f5f7fa;
-}
-
+body{font-family:Arial;max-width:900px;margin:auto;padding:20px;background:#f5f7fa;}
 h1{text-align:center;}
-
-.box{
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:15px;
-}
 
 .question{
     background:white;
@@ -41,19 +25,12 @@ button{
     border:none;
     border-radius:8px;
     cursor:pointer;
-    font-size:16px;
 }
 
-a{
-    display:block;
-    margin:8px 0;
-    padding:10px;
-    background:#2a5298;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
+.warning{
+    color:red;
+    font-weight:bold;
 }
-a:hover{background:#1e3c72;}
 </style>
 </head>
 
@@ -61,86 +38,107 @@ a:hover{background:#1e3c72;}
 
 <h1>🔧 工程師職涯測驗</h1>
 
-<div class="box">
-<p>3分鐘測出你適合 QE / PE / RD / EE 工程師類型</p>
-</div>
-
-<!-- 測驗 -->
 <div id="quiz"></div>
 
 <button onclick="showResult()">查看結果</button>
-
-<!-- 入口（SEO用） -->
-<div class="box">
-<h3>工程師職涯分類</h3>
-
-<a href="qe.html">📊 QE 品質工程師</a>
-<a href="pe.html">🏭 PE 製程工程師</a>
-<a href="rd.html">🚀 RD 研發工程師</a>
-<a href="ee.html">⚙️ EE 設備工程師</a>
-</div>
+<div id="msg" class="warning"></div>
 
 <script>
 
-// ===== 真正有邏輯的20題 =====
+// ===== 每題不同情境 + 不同選項 =====
 const questions = [
-"看到產品有異常，你會？",
-"你比較喜歡的工作？",
-"發現問題時第一步？",
-"你偏好工作型態？",
-"成就感來源？",
-"你比較擅長？",
-"你喜歡處理？",
-"同事求助你會？",
-"你學習方式？",
-"理想工作？",
-"設備故障時你會？",
-"做事習慣？",
-"你偏好任務？",
-"錯誤發生時？",
-"你比較像？",
-"你喜歡解決？",
-"你偏好節奏？",
-"你工作風格？",
-"壓力來時？",
-"職涯目標？"
+{
+q:"產品數據異常時，你會怎麼做？",
+a:[
+["先分析數據找根因","QE"],
+["檢查製程流程","PE"],
+["想重新設計產品","RD"],
+["去現場檢查機台","EE"]
+]
+},
+{
+q:"生產效率下降時你會？",
+a:[
+["分析數據找問題","QE"],
+["調整流程改善效率","PE"],
+["重新設計方法","RD"],
+["去調整設備","EE"]
+]
+},
+{
+q:"設計新產品時你會注意？",
+a:[
+["數據與品質穩定性","QE"],
+["製程可行性","PE"],
+["創新功能","RD"],
+["設備相容性","EE"]
+]
+},
+{
+q:"設備突然故障你會？",
+a:[
+["分析故障原因","QE"],
+["檢查流程問題","PE"],
+["想替代設計","RD"],
+["立刻修設備","EE"]
+]
+},
+{
+q:"同事出錯時你會？",
+a:[
+["分析原因","QE"],
+["優化流程","PE"],
+["提出新想法","RD"],
+["直接幫忙處理","EE"]
+]
+}
 ];
 
+// ===== 動態生成 =====
 let html="";
 
-for(let i=0;i<20;i++){
+for(let i=0;i<questions.length;i++){
 html+=`
 <div class="question">
-<p>${i+1}. ${questions[i]}</p>
-
-<label><input type="radio" name="q${i+1}" value="QE">找原因 / 分析數據</label><br>
-<label><input type="radio" name="q${i+1}" value="PE">改善流程 / 提升效率</label><br>
-<label><input type="radio" name="q${i+1}" value="RD">創新設計 / 想方法</label><br>
-<label><input type="radio" name="q${i+1}" value="EE">動手處理 / 修設備</label>
-</div>
+<p>${i+1}. ${questions[i].q}</p>
 `;
+
+questions[i].a.forEach(opt=>{
+html+=`
+<label>
+<input type="radio" name="q${i+1}" value="${opt[1]}">
+${opt[0]}
+</label><br>
+`;
+});
+
+html+=`</div>`;
 }
 
 document.getElementById("quiz").innerHTML=html;
 
-// ===== 計分 + 導向 =====
+// ===== 計分 + 防呆 =====
 function showResult(){
 
 let score={QE:0,PE:0,RD:0,EE:0};
 
-for(let i=1;i<=20;i++){
+for(let i=1;i<=questions.length;i++){
 let ans=document.querySelector('input[name="q'+i+'"]:checked');
-if(ans) score[ans.value]++;
+
+if(!ans){
+document.getElementById("msg").innerText="⚠️ 請完成所有題目";
+return;
+}
+
+score[ans.value]++;
 }
 
 let result=Object.keys(score).reduce((a,b)=>score[a]>score[b]?a:b);
 
-// 導向結果頁
 if(result==="QE") location.href="qe.html";
 if(result==="PE") location.href="pe.html";
 if(result==="RD") location.href="rd.html";
 if(result==="EE") location.href="ee.html";
-
 }
 
 </script>
