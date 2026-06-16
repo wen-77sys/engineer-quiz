@@ -2,9 +2,9 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>工程師職涯測驗｜QE / PE / RD / EE 分析</title>
+<title>工程師職涯測驗｜QE / PE / RD / EE</title>
 
-<meta name="description" content="免費工程師職涯測驗，3分鐘測出你適合QE、PE、RD、EE工程師類型。" />
+<meta name="description" content="免費工程師職涯測驗，測出你適合QE、PE、RD、EE工程師類型">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="google-site-verification" content="google85207e0cc7cca3dc" />
@@ -22,9 +22,9 @@ h1{text-align:center;}
 
 .box{
     background:white;
-    padding:20px;
+    padding:15px;
     border-radius:10px;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 .question{
@@ -46,34 +46,33 @@ button{
 
 a{
     display:block;
-    margin:10px 0;
-    padding:12px;
+    margin:8px 0;
+    padding:10px;
     background:#2a5298;
     color:white;
     text-decoration:none;
     border-radius:8px;
 }
-
 a:hover{background:#1e3c72;}
 </style>
 </head>
 
 <body>
 
-<h1>🔧 工程師職涯測驗平台</h1>
+<h1>🔧 工程師職涯測驗</h1>
 
 <div class="box">
-<p>免費測驗你的工程師類型：QE / PE / RD / EE</p>
+<p>3分鐘測出你適合 QE / PE / RD / EE 工程師類型</p>
 </div>
 
-<!-- ================= 測驗區 ================= -->
+<!-- 測驗 -->
 <div id="quiz"></div>
 
 <button onclick="showResult()">查看結果</button>
 
-<!-- ================= SEO入口（保留） ================= -->
+<!-- 入口（SEO用） -->
 <div class="box">
-<h3>工程師分類</h3>
+<h3>工程師職涯分類</h3>
 
 <a href="qe.html">📊 QE 品質工程師</a>
 <a href="pe.html">🏭 PE 製程工程師</a>
@@ -83,28 +82,28 @@ a:hover{background:#1e3c72;}
 
 <script>
 
-// ===== 有邏輯的20題 =====
+// ===== 真正有邏輯的20題 =====
 const questions = [
-"看到產品有問題，你第一反應是？",
-"你比較喜歡哪種工作內容？",
-"遇到錯誤時你會？",
-"你偏好哪種環境？",
-"你最有成就感的是？",
-"你喜歡處理？",
-"你比較像哪種人？",
-"同事找你幫忙時你會？",
-"你學習新東西時偏好？",
-"你理想工作是？",
-"你看到機台異常會？",
-"你做事習慣是？",
-"你喜歡的任務？",
-"你對錯誤的態度？",
+"看到產品有異常，你會？",
+"你比較喜歡的工作？",
+"發現問題時第一步？",
+"你偏好工作型態？",
+"成就感來源？",
 "你比較擅長？",
+"你喜歡處理？",
+"同事求助你會？",
+"你學習方式？",
+"理想工作？",
+"設備故障時你會？",
+"做事習慣？",
+"你偏好任務？",
+"錯誤發生時？",
+"你比較像？",
 "你喜歡解決？",
-"你偏好的工作節奏？",
-"你覺得自己是？",
-"你遇到壓力會？",
-"你想要的職涯？"
+"你偏好節奏？",
+"你工作風格？",
+"壓力來時？",
+"職涯目標？"
 ];
 
 let html="";
@@ -114,10 +113,10 @@ html+=`
 <div class="question">
 <p>${i+1}. ${questions[i]}</p>
 
-<label><input type="radio" name="q${i+1}" value="QE">找原因 / 分析問題</label><br>
+<label><input type="radio" name="q${i+1}" value="QE">找原因 / 分析數據</label><br>
 <label><input type="radio" name="q${i+1}" value="PE">改善流程 / 提升效率</label><br>
-<label><input type="radio" name="q${i+1}" value="RD">創新設計 / 想新方法</label><br>
-<label><input type="radio" name="q${i+1}" value="EE">動手處理 / 解決現場問題</label>
+<label><input type="radio" name="q${i+1}" value="RD">創新設計 / 想方法</label><br>
+<label><input type="radio" name="q${i+1}" value="EE">動手處理 / 修設備</label>
 </div>
 `;
 }
@@ -145,5 +144,6 @@ if(result==="EE") location.href="ee.html";
 }
 
 </script>
+
 </body>
 </html>
