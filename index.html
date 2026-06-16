@@ -5,16 +5,56 @@
 <title>工程師職涯測驗｜QE / PE / RD / EE 分析</title>
 
 <meta name="description" content="免費工程師職涯測驗，3分鐘測出你適合QE、PE、RD、EE工程師類型。" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="google-site-verification" content="google85207e0cc7cca3dc" />
 
 <style>
-body{font-family:Arial;max-width:900px;margin:auto;padding:20px;background:#f5f7fa;}
-a{display:block;margin:10px 0;padding:12px;background:#2a5298;color:white;text-decoration:none;border-radius:8px;}
+body{
+    font-family:Arial;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+    background:#f5f7fa;
+}
+
+h1{text-align:center;}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.question{
+    background:white;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+
+button{
+    padding:12px 20px;
+    background:#2a5298;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+a{
+    display:block;
+    margin:10px 0;
+    padding:12px;
+    background:#2a5298;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
 a:hover{background:#1e3c72;}
-.box{background:white;padding:20px;border-radius:10px;margin-bottom:20px;}
 </style>
 </head>
 
@@ -26,13 +66,83 @@ a:hover{background:#1e3c72;}
 <p>免費測驗你的工程師類型：QE / PE / RD / EE</p>
 </div>
 
-<a href="qe.html">📊 品質工程師 QE 分析</a>
-<a href="pe.html">🏭 製程工程師 PE 分析</a>
-<a href="rd.html">🚀 研發工程師 RD 分析</a>
-<a href="ee.html">⚙️ 設備工程師 EE 分析</a>
+<!-- ================= 測驗區 ================= -->
+<div id="quiz"></div>
 
-</body>
-</html>
+<button onclick="showResult()">查看結果</button>
+
+<!-- ================= SEO入口（保留） ================= -->
+<div class="box">
+<h3>工程師分類</h3>
+
+<a href="qe.html">📊 QE 品質工程師</a>
+<a href="pe.html">🏭 PE 製程工程師</a>
+<a href="rd.html">🚀 RD 研發工程師</a>
+<a href="ee.html">⚙️ EE 設備工程師</a>
+</div>
+
+<script>
+
+// ===== 20題 =====
+const questions = [
+"你比較喜歡分析問題？",
+"你遇到錯誤會怎麼做？",
+"你偏好什麼工作？",
+"你喜歡什麼環境？",
+"壓力來時你會？",
+"你最重視什麼？",
+"你喜歡做什麼？",
+"同事有問題你會？",
+"成就感來自？",
+"未來想做什麼？",
+"你做事方式？",
+"解決問題方法？",
+"你偏好？",
+"你擅長？",
+"你喜歡？",
+"錯誤發生時？",
+"你比較像？",
+"工作期待？",
+"能力偏向？",
+"理想角色？"
+];
+
+let html="";
+
+for(let i=0;i<20;i++){
+html+=`
+<div class="question">
+<p>${i+1}. ${questions[i]}</p>
+
+<label><input type="radio" name="q${i+1}" value="QE">分析 / 數據</label><br>
+<label><input type="radio" name="q${i+1}" value="PE">流程改善</label><br>
+<label><input type="radio" name="q${i+1}" value="RD">創新設計</label><br>
+<label><input type="radio" name="q${i+1}" value="EE">動手實作</label>
+</div>
+`;
+}
+
+document.getElementById("quiz").innerHTML=html;
+
+// ===== 計分 + 導向 =====
+function showResult(){
+
+let score={QE:0,PE:0,RD:0,EE:0};
+
+for(let i=1;i<=20;i++){
+let ans=document.querySelector('input[name="q'+i+'"]:checked');
+if(ans) score[ans.value]++;
+}
+
+let result=Object.keys(score).reduce((a,b)=>score[a]>score[b]?a:b);
+
+// 👉 直接導向結果頁
+if(result==="QE") location.href="qe.html";
+if(result==="PE") location.href="pe.html";
+if(result==="RD") location.href="rd.html";
+if(result==="EE") location.href="ee.html";
+
+}
 
 </script>
 
