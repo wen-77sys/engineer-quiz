@@ -3,12 +3,20 @@
 <head>
 <meta charset="UTF-8">
 
-<title>工程師職涯測驗｜QE / PE / RD / EE 性向分析</title>
+<title>工程師職涯測驗｜我適合什麼工作？QE / PE / RD / EE 性向分析</title>
 
-<meta name="description" content="免費工程師職涯測驗，3分鐘測出你適合品質工程師(QE)、製程工程師(PE)、研發工程師(RD)、設備工程師(EE)。適合學生與轉職者。">
+<meta name="description" content="免費工程師職涯測驗（20題），快速分析你適合品質工程師(QE)、製程工程師(PE)、研發工程師(RD)、設備工程師(EE)。適合學生、轉職與求職方向參考。">
+
+<meta name="keywords" content="工程師測驗, 職涯測驗, 我適合什麼工作, QE PE RD EE, 品質工程師, 製程工程師, 研發工程師, 設備工程師, 性向測驗">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="google-site-verification" content="google85207e0cc7cca3dc" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="工程師職涯測驗｜3分鐘找到你的工程師類型">
+<meta property="og:description" content="20題免費測驗，快速分析你適合QE/PE/RD/EE工程師類型">
+<meta property="og:type" content="website">
 
 <style>
 body{
@@ -17,82 +25,92 @@ body{
     margin:auto;
     padding:20px;
     background:#f5f7fa;
+    line-height:1.6;
 }
 
 h1{text-align:center;}
 
+.hero{
+    background:linear-gradient(135deg,#2a5298,#1e3c72);
+    color:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+
 .box{
     background:white;
-    padding:15px;
-    margin-bottom:15px;
+    padding:20px;
+    margin-top:15px;
     border-radius:10px;
 }
 
-.question{
-    background:white;
-    padding:15px;
-    margin-bottom:10px;
-    border-radius:10px;
-}
-
-button{
-    padding:12px 20px;
+a.button{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 18px;
     background:#2a5298;
     color:white;
-    border:none;
+    text-decoration:none;
     border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
 }
 
-.warning{
-    color:red;
-    font-weight:bold;
+a.button:hover{
+    background:#1e3c72;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🔧 工程師職涯測驗（QE / PE / RD / EE）</h1>
-
-<!-- SEO介紹區 -->
-<div class="box">
-<h2>免費工程師職涯測驗｜3分鐘找到適合你的工作方向</h2>
-
-<p>
-這是一個免費的職涯性向測驗，幫助你分析是否適合：
-品質工程師(QE)、製程工程師(PE)、研發工程師(RD)、設備工程師(EE)。
-</p>
-
-<p>
-適合學生、剛畢業、或正在轉職工程師的人使用。
-透過20題快速分析你的職涯傾向。
-</p>
+<div class="hero">
+<h1>🔧 工程師職涯測驗</h1>
+<p>20題快速分析你適合的工程師類型（QE / PE / RD / EE）</p>
+<a class="button" href="index.html#quiz">開始測驗</a>
 </div>
 
-<!-- 測驗 -->
+<!-- SEO主內容區 -->
+<div class="box">
+<h2>你適合什麼工作？先做工程師性向測驗</h2>
+
+<p>
+這是一個免費的職涯測驗工具，透過20個問題分析你的工作傾向，
+幫助你判斷是否適合以下工程師職位：
+</p>
+
+<ul>
+<li>📊 品質工程師 QE（數據分析 / SPC / CPK）</li>
+<li>🏭 製程工程師 PE（流程改善 / 生產效率）</li>
+<li>🚀 研發工程師 RD（創新 / 設計 / 開發）</li>
+<li>⚙️ 設備工程師 EE（機台 / 維修 / 現場）</li>
+</ul>
+</div>
+
+<!-- 測驗區 -->
 <div id="quiz"></div>
 
 <button onclick="showResult()">查看結果</button>
-<div id="msg" class="warning"></div>
+<div id="msg" style="color:red;font-weight:bold;"></div>
 
-<!-- FAQ SEO -->
+<!-- SEO延伸 -->
 <div class="box">
-<h2>常見問題</h2>
+<h2>工程師職涯選擇指南</h2>
 
-<p><b>Q：工程師性向測驗是什麼？</b><br>
-幫助你了解適合哪一種工程師職務。</p>
+<p>
+很多學生與轉職者常會問：「我適合什麼工作？」
+透過性向測驗可以快速了解你的職涯方向，
+避免選錯科系或職位。
+</p>
 
-<p><b>Q：QE / PE / RD / EE 是什麼？</b><br>
-四種工程師類型：品質、製程、研發、設備。</p>
-
-<p><b>Q：學生可以做嗎？</b><br>
-可以，適合選科系與職涯方向。</p>
+<p>
+如果你偏向分析型思考，可能適合QE；
+如果你喜歡改善流程，可能適合PE；
+如果你喜歡創新設計，可能適合RD；
+如果你喜歡動手解決問題，可能適合EE。
+</p>
 </div>
 
 <script>
-
 // ===== 每題不同情境 + 不同選項 =====
 const questions = [
 {
