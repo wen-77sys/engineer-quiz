@@ -2,34 +2,31 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>工程師職涯測驗</title>
-    <h2>免費工程師職涯測驗｜3分鐘找到適合你的工作方向</h2>
 
-<p>
-這是一個免費的職涯性向測驗，幫助你分析是否適合：
-品質工程師(QE)、製程工程師(PE)、研發工程師(RD)、設備工程師(EE)。
-</p>
+<title>工程師職涯測驗｜QE / PE / RD / EE 性向分析</title>
 
-<p>
-適合學生、剛畢業、轉職工程師的人使用。
-</p>
-    <h2>常見問題</h2>
-
-<p><b>Q：工程師性向測驗是什麼？</b><br>
-幫助了解你適合的工程師工作類型。</p>
-
-<p><b>Q：QE PE RD EE 是什麼？</b><br>
-四種常見工程師職務分類。</p>
-
-<p><b>Q：學生可以做嗎？</b><br>
-可以，適合找方向。</p>
+<meta name="description" content="免費工程師職涯測驗，3分鐘測出你適合品質工程師(QE)、製程工程師(PE)、研發工程師(RD)、設備工程師(EE)。適合學生與轉職者。">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="google-site-verification" content="google85207e0cc7cca3dc" />
 
 <style>
-body{font-family:Arial;max-width:900px;margin:auto;padding:20px;background:#f5f7fa;}
+body{
+    font-family:Arial;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+    background:#f5f7fa;
+}
+
 h1{text-align:center;}
+
+.box{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+}
 
 .question{
     background:white;
@@ -45,6 +42,7 @@ button{
     border:none;
     border-radius:8px;
     cursor:pointer;
+    font-size:16px;
 }
 
 .warning{
@@ -56,12 +54,42 @@ button{
 
 <body>
 
-<h1>🔧 工程師職涯測驗</h1>
+<h1>🔧 工程師職涯測驗（QE / PE / RD / EE）</h1>
 
+<!-- SEO介紹區 -->
+<div class="box">
+<h2>免費工程師職涯測驗｜3分鐘找到適合你的工作方向</h2>
+
+<p>
+這是一個免費的職涯性向測驗，幫助你分析是否適合：
+品質工程師(QE)、製程工程師(PE)、研發工程師(RD)、設備工程師(EE)。
+</p>
+
+<p>
+適合學生、剛畢業、或正在轉職工程師的人使用。
+透過20題快速分析你的職涯傾向。
+</p>
+</div>
+
+<!-- 測驗 -->
 <div id="quiz"></div>
 
 <button onclick="showResult()">查看結果</button>
 <div id="msg" class="warning"></div>
+
+<!-- FAQ SEO -->
+<div class="box">
+<h2>常見問題</h2>
+
+<p><b>Q：工程師性向測驗是什麼？</b><br>
+幫助你了解適合哪一種工程師職務。</p>
+
+<p><b>Q：QE / PE / RD / EE 是什麼？</b><br>
+四種工程師類型：品質、製程、研發、設備。</p>
+
+<p><b>Q：學生可以做嗎？</b><br>
+可以，適合選科系與職涯方向。</p>
+</div>
 
 <script>
 
